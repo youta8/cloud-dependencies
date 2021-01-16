@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.youta8.cloud</groupId>
+    <artifactId>spring-cloud-dependencies</artifactId>
+    <version>2.0.1</version>
+    <packaging>pom</packaging>
+    <name>spring-cloud-dependencies</name>
+    <description>spring cloud dependencies</description>
+    <url>https://github.com/youta8/cloud-dependencies</url>
+
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+            <url>http://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>youta</name>
+            <email>youta25@163.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <developerConnection>scm:git:https://github.com/youta8/cloud-dependencies.git</developerConnection>
+        <url>https://github.com/youta8/cloud-dependencies.git</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+        <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+        <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+        <nexus-staging-maven.plugin.version>1.6.8</nexus-staging-maven.plugin.version>
+        <java.version>1.8</java.version>
+        <skipTests>true</skipTests>
+
+        <spring.boot.version>2.4.2</spring.boot.version>
+        <alibaba.cloud.version>2.2.4.RELEASE</alibaba.cloud.version>
+        <spring.cloud.version>2020.0.0</spring.cloud.version>
+        <spring.cloud.oauth2.version>2.2.4.RELEASE</spring.cloud.oauth2.version>
+        <youta.common.version>2.0.1</youta.common.version>
+        <youta.core.version>2.0.0</youta.core.version>
+        <security.oauth.version>2.3.8.RELEASE</security.oauth.version>
+        <alibaba-druid.version>1.2.4</alibaba-druid.version>
+
+        <swagger-annotations.version>1.6.2</swagger-annotations.version>
+        <lombok.version>1.18.16</lombok.version>
+        <hutool.version>5.5.7</hutool.version>
+        <jjwt.version>0.9.1</jjwt.version>
+        <mybatis-plus.version>3.4.2</mybatis-plus.version>
+        <transmittable-thread-local.version>2.12.0</transmittable-thread-local.version>
+        <hibernate-validator.version>7.0.0.Final</hibernate-validator.version>
+        <logstash-logback-encoder.version>6.6</logstash-logback-encoder.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <gson.version>2.8.6</gson.version>
+        <google.guava.version>30.1-jre</google.guava.version>
+
+        <javax.servlet-api.version>2.5</javax.servlet-api.version>
+        <jackson-databind.version>2.12.1</jackson-databind.version>
+
+        <ons-client.version>1.8.7.3.Final</ons-client.version>
+        <aliyun-sdk-oss.version>3.11.2</aliyun-sdk-oss.version>
+
+        <com.github.dozermapper.version>6.5.0</com.github.dozermapper.version>
+        <xkcoding.justauth.version>1.3.5</xkcoding.justauth.version>
+        <easy-captcha.version>1.6.2</easy-captcha.version>
+        <com.google.zxing.version>3.4.1</com.google.zxing.version>
+        <redisson.version>3.14.1</redisson.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+
+            <!--core-->
+            <dependency>
+                <groupId>com.youta8.cloud</groupId>
+                <artifactId>youta-common</artifactId>
+                <version>${youta.common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.youta8.core</groupId>
+                <artifactId>cloud-starter</artifactId>
+                <version>${youta.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.youta8.core</groupId>
+                <artifactId>lock-starter</artifactId>
+                <version>${youta.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.youta8.core</groupId>
+                <artifactId>mybatis-starter</artifactId>
+                <version>${youta.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.youta8.core</groupId>
+                <artifactId>dozer-starter</artifactId>
+                <version>${youta.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.youta8.core</groupId>
+                <artifactId>security-starter</artifactId>
+                <version>${youta.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.youta8.core</groupId>
+                <artifactId>redis-starter</artifactId>
+                <version>${youta.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.youta8.core</groupId>
+                <artifactId>log-starter</artifactId>
+                <version>${youta.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.youta8.core</groupId>
+                <artifactId>auth-starter</artifactId>
+                <version>${youta.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.youta8.core</groupId>
+                <artifactId>web-starter</artifactId>
+                <version>${youta.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.youta8.core</groupId>
+                <artifactId>oss-starter</artifactId>
+                <version>${youta.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.youta8.core</groupId>
+                <artifactId>rocket-starter</artifactId>
+                <version>${youta.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security.oauth</groupId>
+                <artifactId>spring-security-oauth2</artifactId>
+                <version>${security.oauth.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-oauth2</artifactId>
+                <version>${spring.cloud.oauth2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${alibaba.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${alibaba-druid.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger-annotations.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-extension</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-annotation</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${transmittable-thread-local.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${google.guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>${logstash-logback-encoder.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>${javax.servlet-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.aliyun.openservices</groupId>
+                <artifactId>ons-client</artifactId>
+                <version>${ons-client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.dozermapper</groupId>
+                <artifactId>dozer-spring4</artifactId>
+                <version>${com.github.dozermapper.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.dozermapper</groupId>
+                <artifactId>dozer-core</artifactId>
+                <version>${com.github.dozermapper.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyun-sdk-oss.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.xkcoding.justauth</groupId>
+                <artifactId>justauth-spring-boot-starter</artifactId>
+                <version>${xkcoding.justauth.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${commons-collections.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson-databind.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.whvcse</groupId>
+                <artifactId>easy-captcha</artifactId>
+                <version>${easy-captcha.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>core</artifactId>
+                <version>${com.google.zxing.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>javase</artifactId>
+                <version>${com.google.zxing.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <!-- 发布插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${maven-release-plugin.version}</version>
+                <configuration>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <checkModificationExcludeList>.iml,.project,.classpath</checkModificationExcludeList>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- GPG 打包插件-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>${maven-gpg-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--将组件部署到OSSRH并将其发布到Central Repository-->
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>${nexus-staging-maven.plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>youta-oss</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
